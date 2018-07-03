@@ -1,14 +1,16 @@
-<!doctype html>
-<html>
-<head>
-  <title>Madlib</title>
-</head>
-<body>
-
+{% extends 'base.html' %}
+{% block title %}
+Madlib
+{% endblock %}
+{% block content%}
 <h1>Your MadLib!</h1>
-<p> There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
-When {{ name }} went to pick it up, it burst into flames in a totally
-{{ adj }} way. </p>
 
-</body>
-</html>
+<p>{% if story == 1%}
+One day while listening to their favorite {% for genre in music %}{{genre}}-{% endfor %}station, {{name}} tripped over their {{adj}} {{noun}}. Their foot turned {{color}}!
+{%endif%}
+
+{% if story == 2%}
+One night while listening to their favorite {% for genre in music %}{{genre}}-{% endfor %}station, {{name}} tripped over their {{adj}} {{noun}}. Their foot turned {{color}}! </
+{%endif%}
+</p>
+{% endblock %}

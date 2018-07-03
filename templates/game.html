@@ -1,11 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <title>A Game!</title>
-</head>
-<body>
-    
-    <form action="/madlib">
+{% extends 'base.html' %}
+{% block title %}
+A Game!
+{% endblock %}
+{% block content%}
+    <form action="/madlib" method="POST">
     	Pick a name
     	<input type="text" name="name">
     	<br>
@@ -27,8 +25,20 @@
     	<label><input type="radio" name="adj" value="ghastly">Ghastly</label>
     	<label><input type="radio" name="adj" value="sparkly">Sparkly</label>
     	<br>
+    	Pick some music genres!
+    	<label class="container">
+    	<input type="checkbox" name="music" value="country">Country
+    	<span class="checkmark"></span></label>
+    	<label class="container">
+    	<input type="checkbox" name="music" value="pop">Pop
+    	<span class="checkmark"></span></label>
+    	<label class="container">
+    	<input type="checkbox" name="music" value="rock">Rock
+    	<span class="checkmark"></span></label>
+    	<label class="container">
+    	<input type="checkbox" name="music" value="polka">Polka
+    	<span class="checkmark"></span></label>
     	<input type="submit" name="submit">
     	<br>
     </form>
-</body>
-</html>
+{% endblock %}
